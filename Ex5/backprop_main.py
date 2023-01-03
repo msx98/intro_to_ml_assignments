@@ -15,7 +15,13 @@ The test accuracy with leaning rate 0.1 in the final epoch should be above 80%.
 What happens when the learning rate is too small or too large? Explain the phenomenon
 """
 import matplotlib
-matplotlib.use('TkAgg')
+try:
+    matplotlib.use('TkAgg')
+except:
+    try:
+        matplotlib.use('headless')
+    except:
+        pass
 import matplotlib.pyplot as plt
 import numpy as np
 plt.ioff()
